@@ -6,14 +6,15 @@ import {
   FaArrowUp,
   FaDownload,
   FaPhoneAlt,
-  FaEnvelope,
+  FaLocationArrow,
 } from "react-icons/fa";
+import { MdAttachEmail, MdEmail } from "react-icons/md";
+import myResume from "../assets/Ikbal_Mondal_Resume.pdf";
 import { useState } from "react";
 
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   const [email, setEmail] = useState("");
-  const [language, setLanguage] = useState("en");
 
   const handleSubscribe = (e) => {
     e.preventDefault();
@@ -94,13 +95,15 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <p className="flex items-center gap-3 text-base-content/70">
-              <FaPhoneAlt /> +91 12345 67890
+              <FaPhoneAlt /> +91 9064743262
             </p>
             <p className="flex items-center gap-3 text-base-content/70 mt-2">
-              <FaEnvelope /> ikbal@example.com
+              <MdAttachEmail className="text-black" />
+              ikbalmondal019@gmail.com
             </p>
-            <p className="text-base-content/70 mt-2">
-              Nadia, West Bengal, India
+            <p className="text-base-content/70 mt-2 flex items-center gap-2">
+              {" "}
+              <FaLocationArrow></FaLocationArrow> West Bengal, India
             </p>
           </div>
 
@@ -157,8 +160,8 @@ export default function Footer() {
             </div>
 
             <motion.a
-              href="/resume.pdf"
-              download
+              href={myResume}
+              download="Ikbal_Mondal_Resume.pdf"
               whileHover={{ scale: 1.05 }}
               className="btn btn-outline w-full flex items-center gap-2"
             >

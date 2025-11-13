@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
 import Tilt from "react-parallax-tilt";
+import SkillsMarquee from "../Components/SkillsMarquee";
 export default function About() {
   const [show, setShow] = useState(false);
 
@@ -131,8 +132,8 @@ export default function About() {
 
             {/* Resume Button */}
             <motion.a
-              href="/resume.pdf"
-              download
+              target="_blank"
+              href="https://drive.google.com/file/d/1OPqQau8ZqxCuc_G2bvNEGKCENKY5XDET/view?usp=sharing"
               whileHover={{ scale: 1.05 }}
               className="btn btn-primary mt-4"
             >
@@ -142,7 +143,7 @@ export default function About() {
             {/* Social Icons */}
             <div className="flex gap-6 text-2xl mt-6">
               <motion.a
-                href="https://github.com/"
+                href="https://github.com/ikbal-mondal"
                 target="_blank"
                 whileHover={{ scale: 1.2 }}
               >
@@ -150,7 +151,7 @@ export default function About() {
               </motion.a>
 
               <motion.a
-                href="https://linkedin.com/"
+                href="https://www.linkedin.com/in/ikbal-mondal/"
                 target="_blank"
                 whileHover={{ scale: 1.2 }}
               >
@@ -174,21 +175,9 @@ export default function About() {
               transition={{ delay: 0.3, type: "spring", stiffness: 120 }}
               className="text-4xl font-bold text-primary"
             >
-              25+
+              20+
             </motion.h3>
             <p className="text-lg text-base-content/80">Projects Completed</p>
-          </div>
-
-          <div className="bg-base-100/40 p-6 rounded-xl backdrop-blur-lg shadow-xl">
-            <motion.h3
-              initial={{ scale: 0 }}
-              whileInView={{ scale: 1 }}
-              transition={{ delay: 0.5, type: "spring", stiffness: 120 }}
-              className="text-4xl font-bold text-primary"
-            >
-              15+
-            </motion.h3>
-            <p className="text-lg text-base-content/80">Happy Clients</p>
           </div>
 
           <div className="bg-base-100/40 p-6 rounded-xl backdrop-blur-lg shadow-xl">
@@ -198,28 +187,15 @@ export default function About() {
               transition={{ delay: 0.7, type: "spring", stiffness: 120 }}
               className="text-4xl font-bold text-primary"
             >
-              2+
+              1+
             </motion.h3>
             <p className="text-lg text-base-content/80">Years of Experience</p>
           </div>
         </motion.div>
 
-        {/* Scrolling Tech Stack Marquee */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-          className="mt-16 overflow-hidden whitespace-nowrap"
-        >
-          <motion.div
-            animate={{ x: ["0%", "-100%"] }}
-            transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
-            className="text-2xl font-medium flex gap-12 text-primary whitespace-nowrap"
-          >
-            HTML • CSS • JavaScript • React.js • Tailwind • Node.js • Express.js
-            • MongoDB • Firebase • GitHub • JWT
-          </motion.div>
-        </motion.div>
+        <div className="mt-12">
+          <SkillsMarquee></SkillsMarquee>
+        </div>
       </div>
     </section>
   );

@@ -13,7 +13,6 @@ import {
   SiFirebase,
   SiExpress,
 } from "react-icons/si";
-import Achievements from "../Components/Achievements";
 
 const skills = [
   { name: "HTML5", icon: <FaHtml5 className="text-orange-500 text-4xl" /> },
@@ -77,7 +76,6 @@ export default function Skills() {
           ))}
         </div>
       </div>
-      <Achievements></Achievements>
     </section>
   );
 }

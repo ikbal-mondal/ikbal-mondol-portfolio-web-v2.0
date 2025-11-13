@@ -57,21 +57,19 @@ const faqData = [
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
   const [activeCategory, setActiveCategory] = useState("All");
-  const [searchTerm, setSearchTerm] = useState("");
 
   const categories = ["All", "General", "Skills", "Projects", "Pricing"];
 
   const filteredFAQ = faqData.filter((item) => {
     const matchCategory =
       activeCategory === "All" || item.category === activeCategory;
-    const matchSearch = item.question
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+    const matchSearch = item.question.toLowerCase();
+
     return matchCategory && matchSearch;
   });
 
   return (
-    <section id="faq" className="py-20">
+    <section id="faq" className="py-10">
       <div className="container mx-auto px-6">
         {/* Heading */}
         <motion.h2
@@ -100,17 +98,6 @@ export default function FAQ() {
               {cat}
             </motion.button>
           ))}
-        </div>
-
-        {/* ✅ New Search Bar Design */}
-        <div className="max-w-lg mx-auto mb-12 relative">
-          <FaSearch className="absolute left-4 top-3 text-base-content/50" />
-          <input
-            type="text"
-            placeholder="Search your question..."
-            className="w-full px-12 py-3 rounded-full shadow-lg border border-white/20 bg-base-100/40 backdrop-blur-md focus:outline-none"
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
         </div>
 
         {/* ✅ New Grid Layout */}

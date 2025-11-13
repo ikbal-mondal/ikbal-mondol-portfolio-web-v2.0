@@ -11,64 +11,62 @@ import { Link } from "react-router";
 // Projects data
 const projects = [
   {
-    title: "E-Commerce Website",
+    title: "Krishi Setu",
     description:
-      "A modern e-commerce platform with secure authentication, cart, and product management.",
-    image: "/images/project1.jpg",
-    video: "/videos/project1-demo.mp4",
-    tech: ["React", "Tailwind", "Firebase"],
-    demo: "#",
-    github: "#",
+      "Krishi-Setu connects farmers and buyers through a modern web platform. It enables secure crop trading with features like interest management and real-time updates.",
+    image: "https://i.ibb.co/Zpq2M7zH/krishi-setu-project-ss.png",
+    tech: [
+      "React",
+      "Tailwind css",
+      "Firebase",
+      "Authentication,",
+      "Node",
+      "Express",
+      "Mongodb",
+      "JWT",
+    ],
+    demo: "https://krishi-setu-e2152.web.app/",
+    github: "https://github.com/ikbal-mondal/krishi-setu",
+    ServerRepo: "https://github.com/ikbal-mondal/krishi-setu-BackEnd",
+    category: "Full Stack",
   },
   {
-    title: "Portfolio Website",
+    title: "Skill-Hub",
     description:
-      "A modern portfolio design built with animations and a fully responsive layout.",
-    image: "/images/project2.jpg",
-    video: "/videos/project2-demo.mp4",
-    tech: ["React", "Framer Motion", "Tailwind"],
-    demo: "#",
-    github: "#",
+      "**Skilled Hub** is an interactive platform that allows individuals to offer, learn, and trade skills within their local area. From guitar lessons to language exchange, coding help, or yoga training, users can browse listings, rate experiences, and connect with local skill providers.",
+    image: "https://i.ibb.co/rK4SR6vN/Skill-Hub-logo.webp",
+    tech: ["React", "Tailwind css", "Firebase Authentication"],
+    demo: "https://skilled-hub-c7b09.web.app",
+    github: "https://github.com/ikbal-mondal/skill-hub",
+    category: "Front End",
   },
   {
-    title: "School Management System",
+    title: "Algorithom",
     description:
-      "Admin dashboard for managing attendance, results, fees & teacher management.",
-    image: "/images/project3.jpg",
-    video: "/videos/project3-demo.mp4",
-    tech: ["React", "Node.js", "MongoDB"],
-    demo: "#",
-    github: "#",
+      "This project is a modern, responsive SPA that simulates a mobile app store, allowing users to browse, search, and manage app installations with data stored in LocalStorage. It focuses on a clean UI, smooth performance, and engaging user experience through efficient state management and visual enhancements.",
+    image: "https://i.ibb.co/PZZqjG0G/alhorithom.png",
+    tech: ["React", "Tailwind css", "Firebase Authentication"],
+    demo: "https://algorythom-app-store.netlify.app/",
+    github: "https://github.com/ikbal-mondal/Algorythm-Ph-A008",
+    category: "Front End",
   },
   {
-    title: "School Management System",
-    description:
-      "Admin dashboard for managing attendance, results, fees & teacher management.",
-    image: "/images/project3.jpg",
-    video: "/videos/project3-demo.mp4",
-    tech: ["React", "Node.js", "MongoDB"],
-    demo: "#",
-    github: "#",
+    title: "Panda E-commerce",
+    description: "Using Html Bootstrap For Designing Panda E-comers",
+    image: "https://i.ibb.co/VphY7CT6/panda.png",
+    tech: ["Html", "Bootstrap"],
+    demo: "https://courageous-sorbet-0ebc2a.netlify.app/",
+    github: "https://github.com/ikbal-mondal/panda_ecommerce.com",
+    category: "Front End",
   },
   {
-    title: "School Management System",
-    description:
-      "Admin dashboard for managing attendance, results, fees & teacher management.",
-    image: "/images/project3.jpg",
-    video: "/videos/project3-demo.mp4",
-    tech: ["React", "Node.js", "MongoDB"],
-    demo: "#",
-    github: "#",
-  },
-  {
-    title: "School Management System",
-    description:
-      "Admin dashboard for managing attendance, results, fees & teacher management.",
-    image: "/images/project3.jpg",
-    video: "/videos/project3-demo.mp4",
-    tech: ["React", "Node.js", "MongoDB"],
-    demo: "#",
-    github: "#",
+    title: "Low Co ",
+    description: "Just Home Page Design Using Row Html, css and Javascript",
+    image: "https://i.ibb.co/N26KPsCc/Screenshot-itlabs.png",
+    tech: ["HTML", "Css", "Javascript"],
+    demo: "https://ikbal-it-labs.netlify.app/",
+    github: "https://github.com/ikbal-mondal/Ikbal-it-Labs",
+    category: "Front End",
   },
 ];
 
@@ -134,10 +132,15 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="rounded-xl w-full h-48 object-cover hover:opacity-80 transition"
+                    className="rounded w-full h-48 object-cover hover:opacity-80 transition"
                   />
 
-                  <h3 className="text-xl font-bold mt-4">{project.title}</h3>
+                  <div className="flex justify-between my-1 gap-2 ">
+                    <h3 className="text-xl font-bold">{project.title}</h3>
+                    <h3 className="text-sm font-bold badge badge-dash badge-primary ">
+                      {project.category}
+                    </h3>
+                  </div>
 
                   <p className="text-base-content/70 text-sm mt-1 line-clamp-2">
                     {project.description}
@@ -175,16 +178,14 @@ export default function Projects() {
             animate={{ opacity: 1, scale: 1 }}
             className="bg-base-100 p-6 rounded-xl shadow-xl max-w-lg w-full"
           >
-            <h2 className="text-2xl font-bold mb-2">{activeProject.title}</h2>
-
+            <div className="flex justify-between gap:2">
+              <h2 className="text-2xl font-bold mb-2">{activeProject.title}</h2>
+              <h3 className="text-sm font-bold badge badge-dash badge-primary ">
+                {activeProject.category}
+              </h3>
+            </div>
             {/* Video preview */}
-            <video
-              src={activeProject.video}
-              autoPlay
-              loop
-              muted
-              className="rounded-xl w-full mb-4"
-            ></video>
+            <img src={activeProject?.image} alt="" />
 
             <p>{activeProject.description}</p>
 
@@ -200,13 +201,31 @@ export default function Projects() {
             </div>
 
             <div className="mt-6 flex justify-end gap-3">
-              <a href={activeProject.demo} className="btn btn-primary">
+              <a
+                target="_black"
+                href={activeProject.demo}
+                className="btn btn-primary"
+              >
                 Live Demo
               </a>
-              <a href={activeProject.github} className="btn btn-outline">
+              <a
+                target="_black"
+                href={activeProject.github}
+                className="btn btn-outline bg-black text-white"
+              >
                 GitHub
               </a>
-              <button className="btn" onClick={handleCloseModal}>
+              {activeProject?.ServerRepo && (
+                <a
+                  target="_black"
+                  href={activeProject.ServerRepo}
+                  className="btn btn-outline bg-amber-300 text-black"
+                >
+                  Server Repo Link
+                </a>
+              )}
+
+              <button className="btn btn-error" onClick={handleCloseModal}>
                 Close
               </button>
             </div>

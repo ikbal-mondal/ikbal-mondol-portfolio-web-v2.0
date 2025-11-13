@@ -9,22 +9,19 @@ import {
 
 const certificateData = [
   {
-    src: "https://certifier.io/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fcertifier%2Fimage%2Fupload%2Fv1740271497%2Fsmall_567_Confined_Space_professional_purple_landscape_min_5b6abaf32c.jpg&w=3840&q=100",
-    title: "React Developer Certificate",
+    src: "https://i.ibb.co/Qvg2Kt7Q/Certificate-Of-Ikbal-Mondal-page-0001.jpg",
+    title: " Web development Course Complication Certificate",
     category: "Course",
-    download: "/certs/react.pdf",
   },
   {
-    src: "https://tagprint.co.in/assets/img/product/certificate-print.png",
-    title: "JavaScript Mastery",
+    src: "https://i.ibb.co/8LkY56Lj/Ikbal-Mondal-Internship-Completion-Certificate-page-0001.jpg",
+    title: "Front End Web development 6 Month's Internship Certificate",
     category: "Internship",
-    download: "/certs/javascript.pdf",
   },
   {
-    src: "https://marketplace.canva.com/EAFlVDzb7sA/3/0/1600w/canva-white-gold-elegant-modern-certificate-of-participation-Qn4Rei141MM.jpg",
-    title: "HTML & CSS Certificate",
+    src: "https://i.ibb.co/F42VMTLs/Job-Completion-Certificate-1.jpg",
+    title: "Front End Web development 10 Month's Internship Certificate",
     category: "Internship",
-    download: "/certs/html.pdf",
   },
 ];
 
@@ -138,17 +135,6 @@ export default function Certificates() {
               <h3 className="text-xl font-bold mt-4 text-center">
                 {filtered[currentIndex].title}
               </h3>
-
-              {/* Download button */}
-              <div className="text-center mt-4">
-                <a
-                  href={filtered[currentIndex].download}
-                  download
-                  className="btn btn-primary flex items-center gap-2 mx-auto"
-                >
-                  <FaDownload /> Download Certificate
-                </a>
-              </div>
 
               {/* Navigation */}
               <div className="absolute inset-y-0 left-2 flex items-center">

@@ -1,48 +1,47 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { FaBriefcase, FaCertificate } from "react-icons/fa";
+import { useState } from "react";
+import certificateWisWork from "../assets/Ikbal Mondal - Internship Completion Certificate.pdf";
+import certificateAminulIt from "../assets/Job-Completion-Certificate.jpg";
 
 const experienceData = [
   {
     role: "Frontend Developer Intern",
-    company: "Company A",
+    company: "WishWorks Solutions Pvt Ltd",
     start: "Jan 2023",
     end: "Jun 2023",
-    logo: "/logos/companyA.png",
-    certificate: "/certificates/companyA.pdf",
+    logo: "https://i.ibb.co/MkDNF3JR/whish-work.png",
+    certificate: certificateWisWork,
     shortDescription:
-      "Worked on responsive UI, design improvements, and performance optimization.",
+      "Worked on responsive UI, Api Integration, and performance optimization.",
     fullDescription:
-      "Developed reusable UI components, improved loading performance by 30%, and collaborated with designers & backend engineers.",
-    skills: ["React", "Tailwind CSS", "API Integration", "Performance Tuning"],
+      "Developed reusable UI components, improved loading performance integrating APIs for dynamic data handling, and optimizing overall application performance for a smoother user experience.",
+    skills: ["React", "Material-Ui", "API Integration", "Performance"],
+    avgDerationJob: "6 Months +",
   },
   {
-    role: "Full Stack Developer Intern",
-    company: "Company B",
+    role: "Project Manager + (Developer)",
+    company: "Aminul IT Firm",
     start: "Aug 2023",
-    end: "May 2024",
-    logo: "/logos/companyB.png",
-    certificate: "/certificates/companyB.pdf",
+    end: "June 2024",
+    logo: "https://aminulitfirm.com/_next/static/media/logo.6dea254b.png",
+    certificate: certificateAminulIt,
     shortDescription:
-      "Built dashboard features, authentication, and integrated MongoDB database.",
+      "Developed and designed the website’s front-end interface, integrated APIs, and managed the development team with proper GitHub branch control.",
     fullDescription:
-      "Developed REST APIs, implemented secure auth, optimized DB queries, and improved UI consistency.",
-    skills: ["Node.js", "MongoDB", "Express.js", "Authentication"],
+      "During this period, I contributed to the front-end development of the website, focusing on UI/UX design, performance optimization, and API integration. I also supervised the development workflow, managed team coordination, and handled version control through GitHub branches.",
+    skills: ["React.js", "API Integration", "Tailwind CSS", "Authentication"],
+    avgDerationJob: "10 Month's",
   },
 ];
 
 export default function Experience() {
-  const [expanded, setExpanded] = useState(null);
   const [certificateModal, setCertificateModal] = useState(null);
-
-  const toggleExpand = (index) => {
-    setExpanded(expanded === index ? null : index);
-  };
 
   const closeModal = () => setCertificateModal(null);
 
   return (
-    <section id="experience" className="min-h-screen py-20">
+    <section id="experience" className=" py-20">
       <div className="container mx-auto px-6">
         {/* Heading */}
         <motion.h2
@@ -71,8 +70,7 @@ export default function Experience() {
               {/* Experience card */}
               <motion.div
                 whileHover={{ scale: 1.02 }}
-                className="bg-base-100/50 backdrop-blur-xl p-6 rounded-xl border border-white/20 shadow-xl cursor-pointer transition-all"
-                onClick={() => toggleExpand(index)}
+                className="bg-base-100/50 backdrop-blur-xl p-6 rounded-xl border border-white/20 shadow-xl transition-all"
               >
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-4">
@@ -86,53 +84,43 @@ export default function Experience() {
                     <h3 className="text-xl font-bold">{item.role}</h3>
                     <p className="text-primary font-semibold">{item.company}</p>
                     <p className="text-sm text-base-content/60">
-                      {item.start} — {item.end}
+                      {item.start} — {item.end}{" "}
+                      <span className="text-md font-bold text-primary">
+                        ({item.avgDerationJob})
+                      </span>
                     </p>
                   </div>
                 </div>
 
-                {/* Short description */}
-                <p className="text-base-content/80">{item.shortDescription}</p>
+                {/* Description */}
+                <p className="text-base-content/80 mb-3">
+                  {item.shortDescription}
+                </p>
+                <p className="text-base-content/80">{item.fullDescription}</p>
 
-                {/* Expandable section */}
-                <motion.div
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{
-                    height: expanded === index ? "auto" : 0,
-                    opacity: expanded === index ? 1 : 0,
-                  }}
-                  transition={{ duration: 0.4 }}
-                  className="overflow-hidden"
-                >
-                  <p className="mt-3">{item.fullDescription}</p>
-
-                  {/* Skill badges */}
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {item.skills.map((skill, i) => (
-                      <motion.span
-                        key={i}
-                        whileHover={{ scale: 1.1 }}
-                        className="px-4 py-1 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm shadow-sm"
-                      >
-                        {skill}
-                      </motion.span>
-                    ))}
-                  </div>
-
-                  {/* Certificate button */}
-                  {item.certificate && (
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      className="btn btn-primary btn-sm mt-4 flex items-center gap-2"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setCertificateModal(item.certificate);
-                      }}
+                {/* Skills */}
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {item.skills.map((skill, i) => (
+                    <motion.span
+                      key={i}
+                      whileHover={{ scale: 1.1 }}
+                      className="px-4 py-1 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm shadow-sm"
                     >
-                      <FaCertificate /> View Certificate
-                    </motion.button>
-                  )}
-                </motion.div>
+                      {skill}
+                    </motion.span>
+                  ))}
+                </div>
+
+                {/* Certificate button */}
+                {item.certificate && (
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    className="btn btn-primary btn-sm mt-4 flex items-center gap-2"
+                    onClick={() => setCertificateModal(item.certificate)}
+                  >
+                    <FaCertificate /> View Certificate
+                  </motion.button>
+                )}
               </motion.div>
             </motion.div>
           ))}

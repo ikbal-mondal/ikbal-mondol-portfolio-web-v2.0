@@ -45,7 +45,7 @@ const courses = [
 
 export default function Courses() {
   return (
-    <section className="py-20 min-h-screen">
+    <section className="py-10 ">
       <div className="container mx-auto px-6">
         {/* Teaching Experience Section */}
         <motion.h2
@@ -58,7 +58,7 @@ export default function Courses() {
         </motion.h2>
 
         <div className="grid md:grid-cols-3 gap-6 mb-16">
-          <StatCard icon={<FaVideo />} number="100+" label="Videos Created" />
+          <StatCard icon={<FaVideo />} number="98+" label="Videos Created" />
           <StatCard
             icon={<FaFolderOpen />}
             number="8"

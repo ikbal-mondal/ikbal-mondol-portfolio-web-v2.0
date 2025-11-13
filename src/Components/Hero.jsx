@@ -7,9 +7,11 @@ import {
   SiReactrouter,
   SiExpress,
 } from "react-icons/si";
+import myResume from "../assets/Ikbal_Mondal_Resume.pdf";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import Tilt from "react-parallax-tilt";
+import { Link } from "react-router";
 export default function Hero() {
   return (
     <section className="max-w-7xl mx-auto px-6 pt-24 grid lg:grid-cols-2 gap-10 items-center">
@@ -45,33 +47,52 @@ export default function Hero() {
             }}
           />
         </h4>
-        <div class="space-y-1 border-2 border-primary/25 rounded-lg p-3 text-base text-base-content/50 leading-relaxed">
+        <div className="space-y-1 border-2 border-primary/25 rounded-lg p-3 text-base text-base-content/50 leading-relaxed">
           <p>
-            <span class="text-primary/90 font-semibold">Frontend:</span>{" "}
+            <span className="text-primary/90 font-semibold">Frontend:</span>{" "}
             React-based responsive UI with smooth animations and modern design.
           </p>
           <p>
-            <span class="text-primary/90 font-semibold">Backend:</span> Fast and
-            scalable REST APIs using Express.js and MongoDB.
+            <span className="text-primary/90 font-semibold">Backend:</span> Fast
+            and scalable REST APIs using Express.js and MongoDB.
           </p>
           <p>
-            <span class="text-primary/90 font-semibold">Authentication:</span>{" "}
+            <span className="text-primary/90 font-semibold">
+              Authentication:
+            </span>{" "}
             Secure login, protected routes, and role-based access using JWT &
             Firebase.
           </p>
         </div>
         {/* BUTTONS */}
         <div className="flex justify-center lg:justify-start gap-4 flex-wrap">
-          <button className="btn btn-primary px-6">View Projects</button>
-          <button className="btn btn-outline px-6">Download Resume</button>
+          <button className="btn btn-primary px-6">
+            <Link to="/all-projects">View Projects</Link>
+          </button>
+
+          <a
+            href={myResume}
+            download="Ikbal_Mondal_Resume.pdf"
+            className="btn btn-outline px-6"
+          >
+            Download Resume
+          </a>
         </div>
 
         {/* SOCIAL LINKS */}
         <div className="flex justify-center lg:justify-start gap-6 text-xl mt-4 text-base-content/60">
-          <a href="https://github.com" className="hover:text-primary">
+          <a
+            href="https://github.com/ikbal-mondal"
+            target="_blank"
+            className="hover:text-primary"
+          >
             <FaGithub />
           </a>
-          <a href="https://linkedin.com" className="hover:text-primary">
+          <a
+            href="https://www.linkedin.com/in/ikbal-mondal"
+            target="_blank"
+            className="hover:text-primary"
+          >
             <FaLinkedin />
           </a>
         </div>
