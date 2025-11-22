@@ -29,8 +29,8 @@ export default function AllProjects() {
     {
       title: "Skill-Hub",
       description:
-        "**Skilled Hub** is an interactive platform that allows individuals to offer, learn, and trade skills within their local area. From guitar lessons to language exchange, coding help, or yoga training, users can browse listings, rate experiences, and connect with local skill providers.",
-      image: "https://i.ibb.co/rK4SR6vN/Skill-Hub-logo.webp",
+        "'Skilled Hub' is an interactive platform that allows individuals to offer, learn, and trade skills within their local area. From guitar lessons to language exchange, coding help, or yoga training, users can browse listings, rate experiences, and connect with local skill providers.",
+      image: "https://i.ibb.co/Q73H5xZn/portfolio-ss.png",
       tech: ["React", "Tailwind css", "Firebase Authentication"],
       live: "https://skilled-hub-c7b09.web.app",
       github: "https://github.com/ikbal-mondal/skill-hub",

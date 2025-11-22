@@ -33,8 +33,8 @@ const projects = [
   {
     title: "Skill-Hub",
     description:
-      "**Skilled Hub** is an interactive platform that allows individuals to offer, learn, and trade skills within their local area. From guitar lessons to language exchange, coding help, or yoga training, users can browse listings, rate experiences, and connect with local skill providers.",
-    image: "https://i.ibb.co/rK4SR6vN/Skill-Hub-logo.webp",
+      "'Skilled Hub' is an interactive platform that allows individuals to offer, learn, and trade skills within their local area. From guitar lessons to language exchange, coding help, or yoga training, users can browse listings, rate experiences, and connect with local skill providers.",
+    image: "https://i.ibb.co/Q73H5xZn/portfolio-ss.png",
     tech: ["React", "Tailwind css", "Firebase Authentication"],
     demo: "https://skilled-hub-c7b09.web.app",
     github: "https://github.com/ikbal-mondal/skill-hub",
@@ -87,7 +87,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-5 ">
+    <section id="projects" className="py-5 px-4">
       <div className="container mx-auto px-6">
         {/* Heading */}
         <motion.h2
