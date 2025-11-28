@@ -7,6 +7,16 @@ export default function AllProjects() {
 
   const projects = [
     {
+      title: "Quick Cart",
+      description:
+        "Quick Cart is a modern, full-stack e-commerce web application built using Next.js and designed to provide a smooth, responsive and integrates Clerk to offer a secure and seamless authentication flow.",
+      image: "https://i.ibb.co/JjNc823b/quikecard-ss.png",
+      tech: ["Next.js", "Tailwind css", "Clark", "Authentication,"],
+      live: "https://quick-cart-next-delta.vercel.app/",
+      github: "https://github.com/ikbal-mondal/QuickCart-Next",
+      category: "Full Stack",
+    },
+    {
       title: "Krishi Setu",
       description:
         "Krishi-Setu connects farmers and buyers through a modern web platform. It enables secure crop trading with features like interest management and real-time updates.",
